@@ -1,11 +1,11 @@
 
 
-const UI = () => {
+const Ui = () => {
     return (
         <div>
-            
+             <p>UI</p>
         </div>
     );
 };
 
-export default UI;
+export default Ui;
