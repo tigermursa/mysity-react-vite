@@ -12,7 +12,7 @@ const TestingShow = () => {
       {siteData?.map((site) => (
         <div
           key={site._key}
-          className="min-w-[100px] md:max-w-[300px] max-h-[400px] m-4 bg-white shadow-lg rounded-lg overflow-hidden"
+          className="min-w-[100px] md:max-w-[300px] max-h-[300px] m-4 bg-white shadow-lg rounded-lg overflow-hidden"
         >
           <img
             src={site.image}

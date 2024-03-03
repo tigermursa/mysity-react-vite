@@ -1,5 +1,6 @@
 import { NavLink, useLocation } from "react-router-dom";
 import {
+  FaGear,
   FaGithubAlt,
   FaGlobe,
   FaGoogle,
@@ -20,7 +21,7 @@ const Sidebar = () => {
 
   return (
     <aside className="bg-blue-950 p-4 lg:p-5 col-span-2 h-[100vh] sticky top-0 left-0 overflow-auto w-[70px] md:w-[200px] lg:w-[250px]">
-      <ul className="flex flex-col text-gray-500 font-bold font-mono text-xl">
+      <ul className="flex flex-col text-gray-500 font-bold font-mono text-3xl md:text-lg">
         <NavLink
           to="/dashboard"
           className={`  mb-3 hover:text-white flex items-center gap-2 ${
@@ -131,6 +132,15 @@ const Sidebar = () => {
         >
           <FaRegEye />
           <span className="hidden md:block"> Show</span>
+        </NavLink>
+        <NavLink
+          to="/control"
+          className={`mb-3 hover:text-white flex items-center gap-2 ${
+            location.pathname.startsWith("/control") ? "text-white" : ""
+          }`}
+        >
+          <FaGear />
+          <span className="hidden md:block"> Control Room</span>
         </NavLink>
       </ul>
     </aside>

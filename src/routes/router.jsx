@@ -16,6 +16,7 @@ import AddWebsite from "../Components/Dashboard/AddWebsite";
 import UpdateWebsite from "../Components/Dashboard/UpdateWebsite";
 import TestingShow from "../Components/Dashboard/TestingShow";
 import Google from "../pages/Google";
+import ControlRoom from "../Components/Dashboard/ControlRoom";
 
 const router = createBrowserRouter([
   {
@@ -81,6 +82,10 @@ const router = createBrowserRouter([
       {
         path: "/google",
         element: <Google />,
+      },
+      {
+        path: "/control",
+        element: <ControlRoom />,
       },
     ],
   },

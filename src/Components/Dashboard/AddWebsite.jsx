@@ -1,10 +1,129 @@
+import { useForm } from "react-hook-form";
+import { useAddDataMutation } from "../../redux/api/api";
+import { useState } from "react";
 
 const AddWebsite = () => {
-    return (
-        <div>
-            <p>Here I will Add website</p> 
-        </div>
-    );
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm();
+  const [addData, { isLoading }] = useAddDataMutation();
+  const [status, setStatus] = useState(null);
+
+  const onSubmit = async (formData) => {
+    try {
+      await addData(formData);
+      setStatus("success");
+      console.log("Data added successfully!");
+      reset();
+    } catch (error) {
+      setStatus("error");
+      console.error("Error adding data:", error);
+    }
+  };
+
+  return (
+    <div className="flex items-center justify-center h-screen">
+      <div className="bg-white p-8 rounded-2xl shadow-2xl max-w-96 md:w-96">
+        <h2
+          className={`text-2xl font-bold mb-4 font-mono ${
+            status === "success" ? "text-green-500" : ""
+          }`}
+        >
+          {status === "success" ? "Added successfully" : "Add Website"}
+        </h2>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <div className="mb-4">
+            <label
+              htmlFor="name"
+              className="block text-sm font-medium text-gray-600"
+            >
+              Name
+            </label>
+            <input
+              {...register("name", { required: "Name is required" })}
+              type="text"
+              id="name"
+              className="mt-1 p-2 w-full border border-gray-300 rounded"
+            />
+            {errors.name && (
+              <p className="text-red-500 text-sm">{errors.name.message}</p>
+            )}
+          </div>
+          <div className="mb-4">
+            <label
+              htmlFor="category"
+              className="block text-sm font-medium text-gray-600"
+            >
+              Category
+            </label>
+            <input
+              {...register("category", { required: "Category is required" })}
+              type="text"
+              id="category"
+              className="mt-1 p-2 w-full border border-gray-300 rounded"
+            />
+            {errors.category && (
+              <p className="text-red-500 text-sm">{errors.category.message}</p>
+            )}
+          </div>
+          <div className="mb-4">
+            <label
+              htmlFor="image"
+              className="block text-sm font-medium text-gray-600"
+            >
+              Image URL
+            </label>
+            <input
+              {...register("image", {
+                required: "Image URL is required",
+                pattern: {
+                  value: /^https?:\/\//,
+                  message: "Invalid URL format",
+                },
+              })}
+              type="text"
+              id="image"
+              className="mt-1 p-2 w-full border border-gray-300 rounded"
+            />
+            {errors.image && (
+              <p className="text-red-500 text-sm">{errors.image.message}</p>
+            )}
+          </div>
+          <div className="mb-4">
+            <label
+              htmlFor="link"
+              className="block text-sm font-medium text-gray-600"
+            >
+              Link URL
+            </label>
+            <input
+              {...register("link", {
+                required: "Link URL is required",
+                pattern: {
+                  value: /^https?:\/\//,
+                  message: "Invalid URL format",
+                },
+              })}
+              type="text"
+              id="link"
+              className="mt-1 p-2 w-full border border-gray-300 rounded"
+            />
+            {errors.link && (
+              <p className="text-red-500 text-sm">{errors.link.message}</p>
+            )}
+          </div>
+          <div className="">
+            <button type="submit" className="btn-grad">
+              {isLoading ? "Adding..." : "Add Website"}
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
 };
 
 export default AddWebsite;

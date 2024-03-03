@@ -17,7 +17,7 @@ export const baseApi = createApi({
     }),
 
     //posting task / Create
-    addDonationData: builder.mutation({
+    addData: builder.mutation({
       query: (data) => ({
         url: "/api/v1/website/create",
         method: "POST",
@@ -49,7 +49,7 @@ export const baseApi = createApi({
 //CRUD api hooks
 export const {
   useGetDataQuery,
-  useAddDonationDataMutation,
+  useAddDataMutation,
   useUpdateDataMutation,
   useDeleteDataMutation,
 } = baseApi;
