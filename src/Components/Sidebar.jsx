@@ -19,15 +19,15 @@ const Sidebar = () => {
   const location = useLocation();
 
   return (
-    <aside className="bg-blue-950 p-4 lg:p-5 col-span-2 h-[100vh] sticky top-0 left-0 overflow-auto">
-      <ul className="flex flex-col text-gray-500 font-bold font-mono ">
+    <aside className="bg-blue-950 p-4 lg:p-5 col-span-2 h-[100vh] sticky top-0 left-0 overflow-auto w-[70px] md:w-[200px] lg:w-[250px]">
+      <ul className="flex flex-col text-gray-500 font-bold font-mono text-xl">
         <NavLink
           to="/dashboard"
-          className={`mb-3 hover:text-white flex items-center gap-2 ${
+          className={`  mb-3 hover:text-white flex items-center gap-2 ${
             location.pathname.startsWith("/dashboard") ? "text-white" : ""
           }`}
         >
-          <FaHouseChimneyWindow /> Home
+          <FaHouseChimneyWindow /> <span className="hidden md:block">Home</span>
         </NavLink>
         <NavLink
           to="/dev"
@@ -36,7 +36,7 @@ const Sidebar = () => {
           }`}
         >
           <FaWhmcs />
-          Development
+          <span className="hidden md:block">Development</span>
         </NavLink>
         <NavLink
           to="/ui"
@@ -45,7 +45,7 @@ const Sidebar = () => {
           }`}
         >
           <FaWandSparkles />
-          UI/UX
+          <span className="hidden md:block">UI/UX</span>
         </NavLink>
         <NavLink
           to="/learn"
@@ -53,7 +53,7 @@ const Sidebar = () => {
             location.pathname.startsWith("/learn") ? "text-white" : ""
           }`}
         >
-          <FaUserGraduate /> Learning
+          <FaUserGraduate /> <span className="hidden md:block"> Learning</span>
         </NavLink>
         <NavLink
           to="/ai"
@@ -62,16 +62,16 @@ const Sidebar = () => {
           }`}
         >
           <FaGithubAlt />
-          AI
+          <span className="hidden md:block"> AI</span>
         </NavLink>
-        <NavLink 
+        <NavLink
           to="/git"
           className={`mb-3 hover:text-white flex items-center gap-2 ${
             location.pathname.startsWith("/git") ? "text-white" : ""
           }`}
         >
           <FaSquareGithub />
-          GitHub
+          <span className="hidden md:block"> GitHub</span>
         </NavLink>
         <NavLink
           to="/news"
@@ -79,7 +79,7 @@ const Sidebar = () => {
             location.pathname.startsWith("/news") ? "text-white" : ""
           }`}
         >
-          <FaGlobe /> News
+          <FaGlobe /> <span className="hidden md:block">News</span>
         </NavLink>
         <NavLink
           to="/google"
@@ -88,7 +88,7 @@ const Sidebar = () => {
           }`}
         >
           <FaGoogle />
-          Google
+          <span className="hidden md:block">Google</span>
         </NavLink>
         <NavLink
           to="/resume"
@@ -97,7 +97,7 @@ const Sidebar = () => {
           }`}
         >
           <FaIdCard />
-          Resume
+          <span className="hidden md:block">Resume</span>
         </NavLink>
         <NavLink
           to="/search"
@@ -105,7 +105,7 @@ const Sidebar = () => {
             location.pathname.startsWith("/search") ? "text-white" : ""
           }`}
         >
-          <FaSistrix /> Search
+          <FaSistrix /> <span className="hidden md:block">Search</span>
         </NavLink>
         <NavLink
           to="/others"
@@ -113,7 +113,7 @@ const Sidebar = () => {
             location.pathname.startsWith("/others") ? "text-white" : ""
           }`}
         >
-          <FaTag /> Others
+          <FaTag /> <span className="hidden md:block"> Others</span>
         </NavLink>
         <NavLink
           to="/add"
@@ -121,7 +121,7 @@ const Sidebar = () => {
             location.pathname.startsWith("/add") ? "text-white" : ""
           }`}
         >
-          <FaPlus /> Add website
+          <FaPlus /> <span className="hidden md:block">Add website</span>
         </NavLink>
         <NavLink
           to="/test"
@@ -129,7 +129,8 @@ const Sidebar = () => {
             location.pathname.startsWith("/test") ? "text-white" : ""
           }`}
         >
-          <FaRegEye /> Show
+          <FaRegEye />
+          <span className="hidden md:block"> Show</span>
         </NavLink>
       </ul>
     </aside>
