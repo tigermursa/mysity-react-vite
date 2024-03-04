@@ -58,29 +58,38 @@ const ControlRoom = () => {
               </th>
             </tr>
           </thead>
-          <tbody>
-            {data?.data.map((website) => (
-              <tr key={website._key}>
-                <td className="py-2 px-4 border-b border-s text-left">
-                  {website.name}
-                </td>
-                <td className="py-2 px-4 border-b text-left hidden md:block">
-                  {website.category}
-                </td>
-                <td className="py-2 px-4 border-b   cursor-pointer ">
-              <NavLink to={`/update/${website._id}`}>
-                <FaPenToSquare className="ms-2 text-blue-700 hover:text-blue-500" />
-              </NavLink>
-            </td>
-                <td className="py-2 px-4 border-b  border-e cursor-pointer">
-                  <FaTrashCan
-                    onClick={() => deleteData(website._id)}
-                    className="ms-3 text-red-700 hover:text-red-500 "
-                  />
-                </td>
-              </tr>
-            ))}
-          </tbody>
+
+          {data?.data.length === 0 ? (
+            <tbody>
+              <td className="mt-2 text-lg font-semibold text-red-700 font-mono ">
+                There is no data to show
+              </td>
+            </tbody>
+          ) : (
+            <tbody>
+              {data?.data.map((website) => (
+                <tr key={website._key}>
+                  <td className="py-2 px-4 border-b border-s text-left">
+                    {website.name}
+                  </td>
+                  <td className="py-2 px-4 border-b text-left hidden md:block">
+                    {website.category}
+                  </td>
+                  <td className="py-2 px-4 border-b   cursor-pointer ">
+                    <NavLink to={`/update/${website._id}`}>
+                      <FaPenToSquare className="ms-2 text-blue-700 hover:text-blue-500" />
+                    </NavLink>
+                  </td>
+                  <td className="py-2 px-4 border-b  border-e cursor-pointer">
+                    <FaTrashCan
+                      onClick={() => deleteData(website._id)}
+                      className="ms-3 text-red-700 hover:text-red-500 "
+                    />
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          )}
         </table>
       </div>
     </div>
@@ -88,4 +97,3 @@ const ControlRoom = () => {
 };
 
 export default ControlRoom;
-

@@ -16,7 +16,7 @@ const AddWebsite = () => {
     try {
       await addData(formData);
       setStatus("success");
-      console.log("Data added successfully!");
+      // console.log("Data added successfully!");
       reset();
     } catch (error) {
       setStatus("error");
