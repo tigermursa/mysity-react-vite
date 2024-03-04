@@ -1,9 +1,52 @@
 import { FaGear, FaPenToSquare, FaTrashCan, FaWrench } from "react-icons/fa6";
-import { useGetDataQuery } from "../../redux/api/api";
+import { useDeleteDataMutation, useGetDataQuery } from "../../redux/api/api";
+// import { confirmAlert } from "react-confirm-alert";
 
 const ControlRoom = () => {
   const { data } = useGetDataQuery("");
+  const [deleteThis] = useDeleteDataMutation();
 
+  // const deleteData = (id) => {
+  //   console.log("this is", id);
+  //   confirmAlert({
+  //     title: "Are you sure?",
+  //     message: "You won't be able to revert this!",
+  //     buttons: [
+  //       {
+  //         label: "Yes, delete it!",
+  //         onClick: async () => {
+  //           try {
+  //             // User confirmed, perform the deletion
+  //             await deleteThis({ id }); // Pass id directly without wrapping it in an object
+  //             confirmAlert({
+  //               title: "Deleted!",
+  //               message: "Your donation has been deleted.",
+  //               buttons: [
+  //                 {
+  //                   label: "OK",
+  //                 },
+  //               ],
+  //             });
+  //           } catch (error) {
+  //             console.error("Error deleting data:", error);
+  //             // Handle the error (e.g., show a message to the user)
+  //           }
+  //         },
+  //       },
+  //       {
+  //         label: "No",
+  //       },
+  //     ],
+  //   });
+  // };
+
+  const deleteData = (id) => {
+    const options = {
+      id: id,
+    };
+
+    deleteThis(options);
+  };
   return (
     <div className="  min-w-[300px] md:min-w-[450px] lg:min-w-[900px]">
       <h2 className="text-xl md:text-4xl font-bold mb-4 text-center font-mono mt-10  flex justify-center gap-2 md:gap-4">
@@ -44,7 +87,10 @@ const ControlRoom = () => {
                   <FaPenToSquare className="ms-2  text-blue-700 hover:text-blue-500 " />
                 </td>
                 <td className="py-2 px-4 border-b  border-e cursor-pointer">
-                  <FaTrashCan className="ms-3 text-red-700 hover:text-red-500 " />
+                  <FaTrashCan
+                    onClick={() => deleteData(website._id)}
+                    className="ms-3 text-red-700 hover:text-red-500 "
+                  />
                 </td>
               </tr>
             ))}

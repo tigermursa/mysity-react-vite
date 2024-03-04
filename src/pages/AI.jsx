@@ -6,7 +6,7 @@ const Ai = () => {
   const siteData = data?.data;
 
   // Filter out data with category "development"
-  const developmentSites = siteData?.filter((site) => site.category === "ui");
+  const developmentSites = siteData?.filter((site) => site.category === "ai");
 
   const openNewWindow = (link) => {
     window.open(link, "_blank");

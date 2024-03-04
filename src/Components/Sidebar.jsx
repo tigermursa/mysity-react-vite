@@ -131,7 +131,7 @@ const Sidebar = () => {
           }`}
         >
           <FaRegEye />
-          <span className="hidden md:block"> Show</span>
+          <span className="hidden md:block"> All</span>
         </NavLink>
         <NavLink
           to="/control"
