@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import { useAddDataMutation } from "../../redux/api/api";
 import { useState } from "react";
+import { FaArrowRotateRight } from "react-icons/fa6";
 
 const AddWebsite = () => {
   const {
@@ -9,7 +10,7 @@ const AddWebsite = () => {
     formState: { errors },
     reset,
   } = useForm();
-  const [addData, { isLoading }] = useAddDataMutation();
+  const [addData, { isLoading, isError }] = useAddDataMutation();
   const [status, setStatus] = useState(null);
 
   const onSubmit = async (formData) => {
@@ -23,6 +24,25 @@ const AddWebsite = () => {
       console.error("Error adding data:", error);
     }
   };
+  //error handling from redux and loader
+  if (isLoading) {
+    return (
+      <div className="flex h-screen justify-center items-center text-blue-800 text-2xl font-extrabold font-mono">
+        <p className="flex items-center gap-2">
+          Loading{" "}
+          <span>
+            <FaArrowRotateRight className="animate-spin" />
+          </span>
+        </p>
+      </div>
+    );
+  } else if (isError) {
+    return (
+      <div className="flex h-screen justify-center items-center text-red-500 text-2xl font-extrabold font-mono">
+        <p className="flex items-center gap-2">ERROR! SOMETHING WENT WRONG !</p>
+      </div>
+    );
+  }
 
   return (
     <div className="flex items-center justify-center h-screen">
