@@ -29,7 +29,7 @@ export const baseApi = createApi({
     updateData: builder.mutation({
       query: (options) => ({
         url: `/api/v1/website/${options.id}`,
-        method: "PUT",
+        method: "PATCH",
         body: options.data,
       }),
       invalidatesTags: ["sites"], //for make fetch after the action

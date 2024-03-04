@@ -1,51 +1,35 @@
 import { FaGear, FaPenToSquare, FaTrashCan, FaWrench } from "react-icons/fa6";
 import { useDeleteDataMutation, useGetDataQuery } from "../../redux/api/api";
-// import { confirmAlert } from "react-confirm-alert";
+import Swal from "sweetalert2";
+import { NavLink } from "react-router-dom";
 
 const ControlRoom = () => {
   const { data } = useGetDataQuery("");
   const [deleteThis] = useDeleteDataMutation();
 
-  // const deleteData = (id) => {
-  //   console.log("this is", id);
-  //   confirmAlert({
-  //     title: "Are you sure?",
-  //     message: "You won't be able to revert this!",
-  //     buttons: [
-  //       {
-  //         label: "Yes, delete it!",
-  //         onClick: async () => {
-  //           try {
-  //             // User confirmed, perform the deletion
-  //             await deleteThis({ id }); // Pass id directly without wrapping it in an object
-  //             confirmAlert({
-  //               title: "Deleted!",
-  //               message: "Your donation has been deleted.",
-  //               buttons: [
-  //                 {
-  //                   label: "OK",
-  //                 },
-  //               ],
-  //             });
-  //           } catch (error) {
-  //             console.error("Error deleting data:", error);
-  //             // Handle the error (e.g., show a message to the user)
-  //           }
-  //         },
-  //       },
-  //       {
-  //         label: "No",
-  //       },
-  //     ],
-  //   });
-  // };
-
   const deleteData = (id) => {
-    const options = {
-      id: id,
-    };
+    // Show a confirmation dialog before deleting
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You will not be able to recover this data!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#d33",
+      cancelButtonColor: "#3085d6",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // If the user confirms, proceed with the deletion
+        const options = {
+          id: id,
+        };
 
-    deleteThis(options);
+        deleteThis(options);
+
+        // Optionally, you can show a success message after deletion
+        Swal.fire("Deleted!", "Your data has been deleted.", "success");
+      }
+    });
   };
   return (
     <div className="  min-w-[300px] md:min-w-[450px] lg:min-w-[900px]">
@@ -84,8 +68,10 @@ const ControlRoom = () => {
                   {website.category}
                 </td>
                 <td className="py-2 px-4 border-b   cursor-pointer ">
-                  <FaPenToSquare className="ms-2  text-blue-700 hover:text-blue-500 " />
-                </td>
+              <NavLink to={`/update/${website._id}`}>
+                <FaPenToSquare className="ms-2 text-blue-700 hover:text-blue-500" />
+              </NavLink>
+            </td>
                 <td className="py-2 px-4 border-b  border-e cursor-pointer">
                   <FaTrashCan
                     onClick={() => deleteData(website._id)}
@@ -102,3 +88,4 @@ const ControlRoom = () => {
 };
 
 export default ControlRoom;
+

@@ -84,8 +84,12 @@ const router = createBrowserRouter([
         element: <Google />,
       },
       {
-        path: "/control",
+        path: "control",
         element: <ControlRoom />,
+      },
+      {
+        path: "update/:id",
+        element: <UpdateWebsite />,
       },
     ],
   },
