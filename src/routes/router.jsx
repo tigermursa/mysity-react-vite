@@ -17,6 +17,7 @@ import UpdateWebsite from "../Components/Dashboard/UpdateWebsite";
 import TestingShow from "../Components/Dashboard/TestingShow";
 import Google from "../pages/Google";
 import ControlRoom from "../Components/Dashboard/ControlRoom";
+import NotFound from "../pages/NotFound";
 
 const router = createBrowserRouter([
   {
@@ -91,7 +92,15 @@ const router = createBrowserRouter([
         path: "update/:id",
         element: <UpdateWebsite />,
       },
+      {
+        path: "/*",
+        element: <NotFound />,
+      },
     ],
+  },
+  {
+    path: "/*",
+    element: <NotFound />,
   },
 ]);
 
