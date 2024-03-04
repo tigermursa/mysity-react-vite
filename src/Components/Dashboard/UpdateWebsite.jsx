@@ -8,6 +8,7 @@ const UpdateWebsite = () => {
   const { id } = useParams();
   const { data, status } = useGetDataQuery(id);
   const siteData = data?.data;
+
   const {
     register,
     handleSubmit,

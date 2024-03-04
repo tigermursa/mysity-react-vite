@@ -1,10 +1,16 @@
-import { FaGear, FaPenToSquare, FaTrashCan, FaWrench } from "react-icons/fa6";
+import {
+  FaArrowRotateRight,
+  FaGear,
+  FaPenToSquare,
+  FaTrashCan,
+  FaWrench,
+} from "react-icons/fa6";
 import { useDeleteDataMutation, useGetDataQuery } from "../../redux/api/api";
 import Swal from "sweetalert2";
 import { NavLink } from "react-router-dom";
 
 const ControlRoom = () => {
-  const { data } = useGetDataQuery("");
+  const { data, isFetching, isLoading } = useGetDataQuery("");
   const [deleteThis] = useDeleteDataMutation();
 
   const deleteData = (id) => {
@@ -31,6 +37,20 @@ const ControlRoom = () => {
       }
     });
   };
+
+  if (isFetching || isLoading) {
+    return (
+      <div className="flex h-screen justify-center items-center text-blue-800 text-2xl font-bold font-mono">
+        <p className="flex items-center gap-2">
+          Loading{" "}
+          <span>
+            <FaArrowRotateRight className="animate-spin" />
+          </span>
+        </p>
+      </div>
+    );
+  }
+
   return (
     <div className="  min-w-[300px] md:min-w-[450px] lg:min-w-[900px]">
       <h2 className="text-xl md:text-4xl font-bold mb-4 text-center font-mono mt-10  flex justify-center gap-2 md:gap-4">

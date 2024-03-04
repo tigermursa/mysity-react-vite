@@ -122,7 +122,7 @@ const Sidebar = () => {
             location.pathname.startsWith("/add") ? "text-white" : ""
           }`}
         >
-          <FaPlus /> <span className="hidden md:block">Add website</span>
+          <FaPlus className="" /> <span className="hidden md:block ">Add website</span>
         </NavLink>
         <NavLink
           to="/test"

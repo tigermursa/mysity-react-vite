@@ -1,8 +1,9 @@
 import { NavLink } from "react-router-dom";
 import { useGetDataQuery } from "../redux/api/api";
+import { FaArrowRotateRight } from "react-icons/fa6";
 
 const Ui = () => {
-  const { data } = useGetDataQuery("");
+  const { data, isFetching, isLoading, isError } = useGetDataQuery("");
   const siteData = data?.data;
 
   // Filter out data with category "development"
@@ -12,6 +13,25 @@ const Ui = () => {
     window.open(link, "_blank");
   };
 
+  //error handling from redux and loader
+  if (isFetching || isLoading) {
+    return (
+      <div className="flex h-screen justify-center items-center text-blue-800 text-2xl font-extrabold font-mono">
+        <p className="flex items-center gap-2">
+          Loading{" "}
+          <span>
+            <FaArrowRotateRight className="animate-spin" />
+          </span>
+        </p>
+      </div>
+    );
+  } else if (isError) {
+    return (
+      <div className="flex h-screen justify-center items-center text-red-500 text-2xl font-extrabold font-mono">
+        <p className="flex items-center gap-2">ERROR! SOMETHING WENT WRONG !</p>
+      </div>
+    );
+  }
   return (
     <>
       {developmentSites?.length === 0 ? (
