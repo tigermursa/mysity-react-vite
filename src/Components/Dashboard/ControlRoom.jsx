@@ -5,29 +5,40 @@ const ControlRoom = () => {
   const { data } = useGetDataQuery("");
 
   return (
-    <div className=" border w-[900px]  mt-8">
-      <h2 className="text-2xl font-bold mb-4">Website Control Room</h2>
-      <div className="">
-        <table className=" bg-white border border-gray-300 border w-full">
+    <div className="  min-w-[300px] md:min-w-[450px] lg:min-w-[900px]">
+      <h2 className="text-2xl md:text-4xl font-bold mb-4 text-center font-mono mt-10">
+        Website Control Room
+      </h2>
+      <div className="overflow-x-auto">
+        <table className="w-full border-collapse">
           <thead>
             <tr>
-              <th className="py-2 px-4 border-b">Name</th>
-              <th className="py-2 px-4 border-b">Category</th>
-              <th className="py-2 px-4 border-b">Actions</th>
+              <th className="py-2 px-4 border-b border-t border-s text-left">
+                Name
+              </th>
+              <th className="py-2 px-4 border-b  border-t text-left hidden md:block">
+                Category
+              </th>
+              <th className="py-2 px-4 border-b  border-t text-left">Edit</th>
+              <th className="py-2 px-4 border-b  border-t border-e text-left">
+                Delete
+              </th>
             </tr>
           </thead>
           <tbody>
             {data?.data.map((website) => (
               <tr key={website._key}>
-                <td className="py-2 px-4 border-b ">{website.name}</td>
-                <td className="py-2 px-4 border-b">{website.category}</td>
-                <td className="py-2 px-4 border-b flex gap-5">
-                  <button className="text-blue-700">
-                    <FaPenToSquare />
-                  </button>
-                  <button className="text-red-600">
-                    <FaTrashCan />
-                  </button>
+                <td className="py-2 px-4 border-b border-s text-left">
+                  {website.name}
+                </td>
+                <td className="py-2 px-4 border-b text-left hidden md:block">
+                  {website.category}
+                </td>
+                <td className="py-2 px-4 border-b   cursor-pointer ">
+                  <FaPenToSquare className="ms-2  text-green-700 hover:text-green-500 " />
+                </td>
+                <td className="py-2 px-4 border-b  border-e cursor-pointer">
+                  <FaTrashCan className="ms-3 text-red-700 hover:text-red-500 " />
                 </td>
               </tr>
             ))}
