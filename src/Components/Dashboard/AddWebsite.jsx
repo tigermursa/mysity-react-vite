@@ -46,6 +46,7 @@ const AddWebsite = () => {
               {...register("name", { required: "Name is required" })}
               type="text"
               id="name"
+              placeholder="Name of the website"
               className="mt-1 p-2 w-full border border-gray-300 rounded"
             />
             {errors.name && (
@@ -59,12 +60,23 @@ const AddWebsite = () => {
             >
               Category
             </label>
-            <input
+            <select
               {...register("category", { required: "Category is required" })}
-              type="text"
               id="category"
               className="mt-1 p-2 w-full border border-gray-300 rounded"
-            />
+            >
+              <option value="">Select Category</option>
+              <option value="development">Development</option>
+              <option value="ui">UI</option>
+              <option value="learning">Learning</option>
+              <option value="ai">AI</option>
+              <option value="github">GitHub</option>
+              <option value="news">News</option>
+              <option value="google">Google</option>
+              <option value="resume">Resume</option>
+              <option value="search">Search</option>
+              <option value="others">Others</option>
+            </select>
             {errors.category && (
               <p className="text-red-500 text-sm">{errors.category.message}</p>
             )}
@@ -85,6 +97,7 @@ const AddWebsite = () => {
                 },
               })}
               type="text"
+              placeholder="Put hosted image URL"
               id="image"
               className="mt-1 p-2 w-full border border-gray-300 rounded"
             />
@@ -109,6 +122,7 @@ const AddWebsite = () => {
               })}
               type="text"
               id="link"
+              placeholder="Website address"
               className="mt-1 p-2 w-full border border-gray-300 rounded"
             />
             {errors.link && (
