@@ -1,11 +1,44 @@
-
+import { NavLink } from "react-router-dom";
+import { useGetDataQuery } from "../redux/api/api";
 
 const Google = () => {
-    return (
-        <div>
-            <p>Google</p>
+  const { data } = useGetDataQuery("");
+  const siteData = data?.data;
+
+  // Filter out data with category "development"
+  const developmentSites = siteData?.filter(
+    (site) => site.category === "google"
+  );
+
+  const openNewWindow = (link) => {
+    window.open(link, "_blank");
+  };
+
+  return (
+    <div className="flex flex-wrap justify-center">
+      {developmentSites?.map((site) => (
+        <div
+          key={site._key}
+          className="min-w-[100px] md:max-w-[300px] max-h-[300px] m-4 bg-white shadow-lg rounded-lg overflow-hidden"
+        >
+          <img
+            src={site.image}
+            alt={site.name}
+            className="min-w-[300px] h-40 object-fill object-center"
+          />
+          <div className="p-4">
+            <h3 className="text-xl text-center font-bold mb-2">{site.name}</h3>
+            <NavLink
+              onClick={() => openNewWindow(site.link)}
+              className="btn-grad font-semibold font-sans"
+            >
+              Visit now
+            </NavLink>
+          </div>
         </div>
-    );
+      ))}
+    </div>
+  );
 };
 
 export default Google;

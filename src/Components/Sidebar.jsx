@@ -136,10 +136,14 @@ const Sidebar = () => {
         <NavLink
           to="/control"
           className={`mb-3 hover:text-white flex items-center gap-2 ${
-            location.pathname.startsWith("/control") ? "text-white" : ""
+            location.pathname.startsWith("/control") ? "text-white " : ""
           }`}
         >
-          <FaGear />
+          <FaGear
+            className={`${
+              location.pathname.startsWith("/control") ? "animate-spin " : ""
+            }`}
+          />
           <span className="hidden md:block"> Control Room</span>
         </NavLink>
       </ul>
