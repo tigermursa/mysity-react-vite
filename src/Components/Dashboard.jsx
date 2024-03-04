@@ -8,7 +8,7 @@ const Dashboard = () => {
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="text-7xl font-serif font-semibold text-gray-700"
+        className="text-3xl md:text-5xl lg:text-6xl xl:text-6xl font-serif font-semibold text-gray-700 text-center"
       >
         Welcome to My<span className="text-blue-800">s</span>ity Dashboard
       </motion.h1>
@@ -16,9 +16,10 @@ const Dashboard = () => {
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
-        className="text-4xl font-serif font-semibold text-gray-700 flex items-center gap-4"
+        className="text-sm md:text-2xl lg:text-3xl xl:text-4xl text-center font-serif font-semibold text-gray-700 flex items-center gap-4"
       >
-        All necessary websites in one place <FaCircleArrowDown className="animate-bounce text-blue-800 " />
+        All necessary websites in one place{" "}
+        <FaCircleArrowDown className="animate-bounce text-blue-800 " />
       </motion.p>
     </div>
   );
