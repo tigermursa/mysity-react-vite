@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { useGetDataQuery } from "../redux/api/api";
-import { FaArrowRotateRight } from "react-icons/fa6";
+import { FaArrowsSpin } from "react-icons/fa6";
 
 const Ui = () => {
   const { data, isFetching, isLoading, isError } = useGetDataQuery("");
@@ -20,7 +20,7 @@ const Ui = () => {
         <p className="flex items-center gap-2">
           Loading{" "}
           <span>
-            <FaArrowRotateRight className="animate-spin" />
+            <FaArrowsSpin className="animate-spin" />
           </span>
         </p>
       </div>

@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import { useAddDataMutation } from "../../redux/api/api";
 import { useState } from "react";
-import { FaArrowRotateRight } from "react-icons/fa6";
+import { FaArrowsSpin } from "react-icons/fa6";
 
 const AddWebsite = () => {
   const {
@@ -31,7 +31,7 @@ const AddWebsite = () => {
         <p className="flex items-center gap-2">
           Loading{" "}
           <span>
-            <FaArrowRotateRight className="animate-spin" />
+            <FaArrowsSpin className="animate-spin" />
           </span>
         </p>
       </div>

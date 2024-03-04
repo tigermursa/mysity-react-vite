@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { useGetDataQuery } from "../redux/api/api";
-import { FaArrowRotateRight } from "react-icons/fa6";
+import { FaArrowsSpin } from "react-icons/fa6";
 
 const Development = () => {
   const { data, isFetching, isLoading, isError } = useGetDataQuery("");
@@ -14,7 +14,7 @@ const Development = () => {
   const openNewWindow = (link) => {
     window.open(link, "_blank");
   };
-  
+
 //error handling from redux and loader
 if (isFetching || isLoading) {
   return (
@@ -22,7 +22,7 @@ if (isFetching || isLoading) {
       <p className="flex items-center gap-2">
         Loading{" "}
         <span>
-          <FaArrowRotateRight className="animate-spin" />
+          <FaArrowsSpin className="animate-spin" />
         </span>
       </p>
     </div>

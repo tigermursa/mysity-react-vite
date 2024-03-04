@@ -1,5 +1,5 @@
 import {
-  FaArrowRotateRight,
+  FaArrowsSpin,
   FaGear,
   FaPenToSquare,
   FaTrashCan,
@@ -44,7 +44,7 @@ const ControlRoom = () => {
         <p className="flex items-center gap-2">
           Loading{" "}
           <span>
-            <FaArrowRotateRight className="animate-spin" />
+            <FaArrowsSpin className="animate-spin" />
           </span>
         </p>
       </div>
