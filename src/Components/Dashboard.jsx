@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { FaCircleArrowDown } from "react-icons/fa6";
 
 const Dashboard = () => {
   return (
@@ -15,9 +16,9 @@ const Dashboard = () => {
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
-        className="text-4xl font-serif font-semibold text-gray-700"
+        className="text-4xl font-serif font-semibold text-gray-700 flex items-center gap-4"
       >
-        All necessary websites in one place 
+        All necessary websites in one place <FaCircleArrowDown className="animate-bounce text-blue-800 " />
       </motion.p>
     </div>
   );
