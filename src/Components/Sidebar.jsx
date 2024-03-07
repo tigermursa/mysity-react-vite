@@ -1,14 +1,15 @@
 import { NavLink, useLocation } from "react-router-dom";
 import {
+  FaCloudArrowUp,
   FaGear,
   FaGithubAlt,
   FaGlobe,
   FaGoogle,
+  FaHeartCircleCheck,
   FaHouseChimneyWindow,
   FaIdCard,
   FaPlus,
   FaRegEye,
-  FaSistrix,
   FaSquareGithub,
   FaTag,
   FaUserGraduate,
@@ -36,8 +37,17 @@ const Sidebar = () => {
             location.pathname.startsWith("/dev") ? "text-white" : ""
           }`}
         >
-          <FaWhmcs />
+           <FaWhmcs />
           <span className="hidden md:block">Development</span>
+        </NavLink>
+        <NavLink
+          to="/deploy"
+          className={`mb-3 hover:text-white flex items-center gap-2 ${
+            location.pathname.startsWith("/deploy") ? "text-white" : ""
+          }`}
+        >
+         <FaCloudArrowUp />
+          <span className="hidden md:block">Deployment</span>
         </NavLink>
         <NavLink
           to="/ui"
@@ -106,7 +116,8 @@ const Sidebar = () => {
             location.pathname.startsWith("/search") ? "text-white" : ""
           }`}
         >
-          <FaSistrix /> <span className="hidden md:block">Search</span>
+          <FaHeartCircleCheck />{" "}
+          <span className="hidden md:block">Cool sites</span>
         </NavLink>
         <NavLink
           to="/others"
@@ -122,7 +133,8 @@ const Sidebar = () => {
             location.pathname.startsWith("/add") ? "text-white" : ""
           }`}
         >
-          <FaPlus className="" /> <span className="hidden md:block ">Add website</span>
+          <FaPlus className="" />{" "}
+          <span className="hidden md:block ">Add website</span>
         </NavLink>
         <NavLink
           to="/test"

@@ -18,6 +18,7 @@ import TestingShow from "../Components/Dashboard/TestingShow";
 import Google from "../pages/Google";
 import ControlRoom from "../Components/Dashboard/ControlRoom";
 import NotFound from "../pages/NotFound";
+import Deployement from "../pages/Deployemnet";
 
 const router = createBrowserRouter([
   {
@@ -25,7 +26,7 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       {
-        index:true,
+        index: true,
         element: <Dashboard />,
       },
       {
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
       {
         path: "/dev",
         element: <Development />,
+      },
+      {
+        path: "/deploy",
+        element: <Deployement />,
       },
       {
         path: "/ui",

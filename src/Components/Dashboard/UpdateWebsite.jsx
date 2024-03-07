@@ -91,6 +91,7 @@ const UpdateWebsite = () => {
             >
               <option value="">Select Category</option>
               <option value="development">Development</option>
+              <option value="deployment">Deployment</option>
               <option value="ui">UI</option>
               <option value="learning">Learning</option>
               <option value="ai">AI</option>
@@ -98,7 +99,7 @@ const UpdateWebsite = () => {
               <option value="news">News</option>
               <option value="google">Google</option>
               <option value="resume">Resume</option>
-              <option value="search">Search</option>
+              <option value="cool">Cool</option>
               <option value="others">Others</option>
             </select>
             {errors.category && (

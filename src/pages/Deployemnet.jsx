@@ -2,13 +2,13 @@ import { NavLink } from "react-router-dom";
 import { useGetDataQuery } from "../redux/api/api";
 import { FaArrowsSpin } from "react-icons/fa6";
 
-const Search = () => {
+const Deployement = () => {
   const { data, isFetching, isLoading, isError } = useGetDataQuery("");
   const siteData = data?.data;
 
   // Filter out data with category "development"
   const developmentSites = siteData?.filter(
-    (site) => site.category === "cool"
+    (site) => site.category === "deployment"
   );
 
   const openNewWindow = (link) => {
@@ -71,4 +71,4 @@ const Search = () => {
   );
 };
 
-export default Search;
+export default Deployement;
