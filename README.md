@@ -1,4 +1,4 @@
-## hosted live link : https://misitey-pro.web.app/git
+## hosted live link : https://misitey-pro.web.app
 
 # Mysity Pro Features
 
