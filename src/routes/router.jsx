@@ -20,6 +20,7 @@ import ControlRoom from "../Components/Dashboard/ControlRoom";
 import NotFound from "../pages/NotFound";
 import Deployement from "../pages/Deployemnet";
 import MyHosted from "../pages/Myhosted";
+import PrivateRoutes from "../Providers/PrivateRoutes";
 
 const router = createBrowserRouter([
   {
@@ -80,7 +81,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/my-hosted",
-        element: <MyHosted />,
+        element: (
+          <PrivateRoutes>
+            <MyHosted />
+          </PrivateRoutes>
+        ),
       },
       {
         path: "/add",

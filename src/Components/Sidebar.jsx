@@ -10,6 +10,7 @@ import {
   FaIdCard,
   FaPlus,
   FaRegEye,
+  FaRocket,
   FaSquareGithub,
   FaTag,
   FaUserGraduate,
@@ -116,8 +117,7 @@ const Sidebar = () => {
             location.pathname.startsWith("/search") ? "text-white" : ""
           }`}
         >
-          <FaHeartCircleCheck />{" "}
-          <span className="hidden md:block">My Hosted</span>
+          <FaRocket /> <span className="hidden md:block">My Hosted</span>
         </NavLink>
         <NavLink
           to="/cool"

@@ -31,3 +31,6 @@ vite.config.js
 index.html
 index.css
 .vercel
+Providers
+PrivateRoutes.tsx
+.gitignore
