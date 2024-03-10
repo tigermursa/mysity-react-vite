@@ -30,7 +30,12 @@ const Sidebar = () => {
             location.pathname.startsWith("/dashboard") ? "text-white" : ""
           }`}
         >
-          <FaHouseChimneyWindow /> <span className="hidden md:block">Home</span>
+          <FaHouseChimneyWindow
+            className={`${
+              location.pathname.startsWith("/dashboard") ? "animate-pulse " : ""
+            }`}
+          />
+          <span className="hidden md:block">Home</span>
         </NavLink>
         <NavLink
           to="/dev"
@@ -38,7 +43,11 @@ const Sidebar = () => {
             location.pathname.startsWith("/dev") ? "text-white" : ""
           }`}
         >
-          <FaWhmcs />
+          <FaWhmcs
+            className={`${
+              location.pathname.startsWith("/dev") ? "animate-pulse " : ""
+            }`}
+          />
           <span className="hidden md:block">Development</span>
         </NavLink>
         <NavLink
@@ -47,7 +56,11 @@ const Sidebar = () => {
             location.pathname.startsWith("/deploy") ? "text-white" : ""
           }`}
         >
-          <FaCloudArrowUp />
+          <FaCloudArrowUp
+            className={`${
+              location.pathname.startsWith("/deploy") ? "animate-pulse " : ""
+            }`}
+          />
           <span className="hidden md:block">Deployment</span>
         </NavLink>
         <NavLink
@@ -56,7 +69,11 @@ const Sidebar = () => {
             location.pathname.startsWith("/ui") ? "text-white" : ""
           }`}
         >
-          <FaWandSparkles />
+          <FaWandSparkles
+            className={`${
+              location.pathname.startsWith("/ui") ? "animate-pulse " : ""
+            }`}
+          />
           <span className="hidden md:block">UI/UX</span>
         </NavLink>
         <NavLink
@@ -65,7 +82,12 @@ const Sidebar = () => {
             location.pathname.startsWith("/learn") ? "text-white" : ""
           }`}
         >
-          <FaUserGraduate /> <span className="hidden md:block"> Learning</span>
+          <FaUserGraduate
+            className={`${
+              location.pathname.startsWith("/learn") ? "animate-pulse " : ""
+            }`}
+          />{" "}
+          <span className="hidden md:block"> Learning</span>
         </NavLink>
         <NavLink
           to="/ai"
@@ -73,7 +95,11 @@ const Sidebar = () => {
             location.pathname.startsWith("/ai") ? "text-white" : ""
           }`}
         >
-          <FaGithubAlt />
+          <FaGithubAlt
+            className={`${
+              location.pathname.startsWith("/ai") ? "animate-pulse " : ""
+            }`}
+          />
           <span className="hidden md:block"> AI</span>
         </NavLink>
         <NavLink
@@ -82,7 +108,11 @@ const Sidebar = () => {
             location.pathname.startsWith("/git") ? "text-white" : ""
           }`}
         >
-          <FaSquareGithub />
+          <FaSquareGithub
+            className={`${
+              location.pathname.startsWith("/git") ? "animate-pulse " : ""
+            }`}
+          />
           <span className="hidden md:block"> GitHub</span>
         </NavLink>
         <NavLink
@@ -91,7 +121,12 @@ const Sidebar = () => {
             location.pathname.startsWith("/news") ? "text-white" : ""
           }`}
         >
-          <FaGlobe /> <span className="hidden md:block">News</span>
+          <FaGlobe
+            className={`${
+              location.pathname.startsWith("/news") ? "animate-pulse " : ""
+            }`}
+          />{" "}
+          <span className="hidden md:block">News</span>
         </NavLink>
         <NavLink
           to="/google"
@@ -99,7 +134,11 @@ const Sidebar = () => {
             location.pathname.startsWith("/google") ? "text-white" : ""
           }`}
         >
-          <FaGoogle />
+          <FaGoogle
+            className={`${
+              location.pathname.startsWith("/google") ? "animate-pulse " : ""
+            }`}
+          />
           <span className="hidden md:block">Google</span>
         </NavLink>
         <NavLink
@@ -108,24 +147,37 @@ const Sidebar = () => {
             location.pathname.startsWith("/resume") ? "text-white" : ""
           }`}
         >
-          <FaIdCard />
+          <FaIdCard
+            className={`${
+              location.pathname.startsWith("/resume") ? "animate-pulse " : ""
+            }`}
+          />
           <span className="hidden md:block">Resume</span>
         </NavLink>
         <NavLink
           to="/my-hosted"
           className={`mb-3 hover:text-white flex items-center gap-2 ${
-            location.pathname.startsWith("/search") ? "text-white" : ""
+            location.pathname.startsWith("/my-hosted") ? "text-white" : ""
           }`}
         >
-          <FaRocket /> <span className="hidden md:block">My Hosted</span>
+          <FaRocket
+            className={`${
+              location.pathname.startsWith("/my-hosted") ? "animate-pulse " : ""
+            }`}
+          />{" "}
+          <span className="hidden md:block">My Hosted</span>
         </NavLink>
         <NavLink
           to="/cool"
           className={`mb-3 hover:text-white flex items-center gap-2 ${
-            location.pathname.startsWith("/search") ? "text-white" : ""
+            location.pathname.startsWith("/cool") ? "text-white" : ""
           }`}
         >
-          <FaHeartCircleCheck />{" "}
+          <FaHeartCircleCheck
+            className={`${
+              location.pathname.startsWith("/cool") ? "animate-pulse " : ""
+            }`}
+          />{" "}
           <span className="hidden md:block">Cool sites</span>
         </NavLink>
         <NavLink
@@ -134,7 +186,12 @@ const Sidebar = () => {
             location.pathname.startsWith("/others") ? "text-white" : ""
           }`}
         >
-          <FaTag /> <span className="hidden md:block"> Others</span>
+          <FaTag
+            className={`${
+              location.pathname.startsWith("/others") ? "animate-pulse " : ""
+            }`}
+          />{" "}
+          <span className="hidden md:block"> Others</span>
         </NavLink>
         <NavLink
           to="/add"
@@ -142,7 +199,11 @@ const Sidebar = () => {
             location.pathname.startsWith("/add") ? "text-white" : ""
           }`}
         >
-          <FaPlus className="" />{" "}
+          <FaPlus
+            className={`${
+              location.pathname.startsWith("/add") ? "animate-pulse " : ""
+            }`}
+          />
           <span className="hidden md:block ">Add website</span>
         </NavLink>
         <NavLink
@@ -151,7 +212,11 @@ const Sidebar = () => {
             location.pathname.startsWith("/test") ? "text-white" : ""
           }`}
         >
-          <FaRegEye />
+          <FaRegEye
+            className={`${
+              location.pathname.startsWith("/test") ? "animate-pulse " : ""
+            }`}
+          />
           <span className="hidden md:block"> All</span>
         </NavLink>
         <NavLink

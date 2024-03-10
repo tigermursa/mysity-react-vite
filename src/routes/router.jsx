@@ -53,7 +53,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/learn",
-        element: <Learning />,
+        element: (
+          <PrivateRoutes>
+            <Learning />
+          </PrivateRoutes>
+        ),
       },
       {
         path: "/ai",
@@ -81,11 +85,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/my-hosted",
-        element: (
-          <PrivateRoutes>
-            <MyHosted />
-          </PrivateRoutes>
-        ),
+        element: <MyHosted />,
       },
       {
         path: "/add",
@@ -97,7 +97,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/test",
-        element: <TestingShow />,
+        element: (
+          <PrivateRoutes>
+            <TestingShow />
+          </PrivateRoutes>
+        ),
       },
       {
         path: "/google",
@@ -105,7 +109,11 @@ const router = createBrowserRouter([
       },
       {
         path: "control",
-        element: <ControlRoom />,
+        element: (
+          <PrivateRoutes>
+            <ControlRoom />
+          </PrivateRoutes>
+        ),
       },
       {
         path: "update/:id",
