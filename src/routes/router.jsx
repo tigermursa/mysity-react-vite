@@ -19,6 +19,7 @@ import Google from "../pages/Google";
 import ControlRoom from "../Components/Dashboard/ControlRoom";
 import NotFound from "../pages/NotFound";
 import Deployement from "../pages/Deployemnet";
+import MyHosted from "../pages/Myhosted";
 
 const router = createBrowserRouter([
   {
@@ -74,8 +75,12 @@ const router = createBrowserRouter([
         element: <Resume />,
       },
       {
-        path: "/search",
+        path: "/cool",
         element: <Search />,
+      },
+      {
+        path: "/my-hosted",
+        element: <MyHosted />,
       },
       {
         path: "/add",

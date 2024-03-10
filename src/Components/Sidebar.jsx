@@ -37,7 +37,7 @@ const Sidebar = () => {
             location.pathname.startsWith("/dev") ? "text-white" : ""
           }`}
         >
-           <FaWhmcs />
+          <FaWhmcs />
           <span className="hidden md:block">Development</span>
         </NavLink>
         <NavLink
@@ -46,7 +46,7 @@ const Sidebar = () => {
             location.pathname.startsWith("/deploy") ? "text-white" : ""
           }`}
         >
-         <FaCloudArrowUp />
+          <FaCloudArrowUp />
           <span className="hidden md:block">Deployment</span>
         </NavLink>
         <NavLink
@@ -111,7 +111,16 @@ const Sidebar = () => {
           <span className="hidden md:block">Resume</span>
         </NavLink>
         <NavLink
-          to="/search"
+          to="/my-hosted"
+          className={`mb-3 hover:text-white flex items-center gap-2 ${
+            location.pathname.startsWith("/search") ? "text-white" : ""
+          }`}
+        >
+          <FaHeartCircleCheck />{" "}
+          <span className="hidden md:block">My Hosted</span>
+        </NavLink>
+        <NavLink
+          to="/cool"
           className={`mb-3 hover:text-white flex items-center gap-2 ${
             location.pathname.startsWith("/search") ? "text-white" : ""
           }`}

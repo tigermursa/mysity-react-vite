@@ -92,6 +92,7 @@ const AddWebsite = () => {
               <option value="learning">Learning</option>
               <option value="ai">AI</option>
               <option value="github">GitHub</option>
+              <option value="my-hosted">GitHub</option>
               <option value="news">News</option>
               <option value="google">Google</option>
               <option value="resume">Resume</option>
