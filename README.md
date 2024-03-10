@@ -1,8 +1,27 @@
-# React + Vite
+## hosted live link : https://misitey-pro.web.app/git
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Mysity Pro Features
 
-Currently, two official plugins are available:
+1) My All necessary websites on a cool dashboard
+2) I can organize all site like by catagories
+3) Crud operation on all sites
+4) Protected page so that others can see
+5) full responsive 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+### Technologies used on front-end :
+
+1. React vite
+2. Tailwind CSS
+3. Redux Toolkit
+4. React Icons
+
+### Technologies used on Backend:
+
+1. Node Express
+2. TypeScript
+3. Modular Pattern
+
+### Technologies used to host :
+
+Vercel and firebase
