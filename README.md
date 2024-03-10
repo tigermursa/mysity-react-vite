@@ -2,12 +2,11 @@
 
 # Mysity Pro Features
 
-1) My All necessary websites on a cool dashboard
-2) I can organize all site like by catagories
-3) Crud operation on all sites
-4) Protected page so that others can see
-5) full responsive 
-
+1. Centralized Dashboard: Access all your essential websites from one sleek dashboard for enhanced convenience.
+2. Intuitive Organization: Effortlessly categorize and organize your sites for a streamlined browsing experience.
+3. CRUD Operations: Perform comprehensive CRUD (Create, Read, Update, Delete) operations seamlessly across all your websites.
+4. Enhanced Security: Safeguard your content with protected pages, ensuring that only authorized users have access to sensitive information.
+5. Full Responsiveness: Experience optimal usability on any device with a fully responsive design for a seamless and adaptive user interface.
 
 ### Technologies used on front-end :
 
