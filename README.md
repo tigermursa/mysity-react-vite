@@ -23,4 +23,4 @@
 
 ### Technologies used to host :
 
-Vercel and firebase
+Vercel(Backend) and firebase(Frontend)
