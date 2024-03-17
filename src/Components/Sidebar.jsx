@@ -8,6 +8,7 @@ import {
   FaHeartCircleCheck,
   FaHouseChimneyWindow,
   FaIdCard,
+  FaListCheck,
   FaPlus,
   FaRegEye,
   FaRocket,
@@ -231,6 +232,19 @@ const Sidebar = () => {
             }`}
           />
           <span className="hidden md:block"> Control Room</span>
+        </NavLink>
+        <NavLink
+          to="/todo"
+          className={`mb-3 hover:text-white flex items-center gap-2 ${
+            location.pathname.startsWith("/todo") ? "text-white " : ""
+          }`}
+        >
+          <FaListCheck
+            className={`${
+              location.pathname.startsWith("/todo") ? "animate-pulse " : ""
+            }`}
+          />
+          <span className="hidden md:block">Todo</span>
         </NavLink>
       </ul>
     </aside>
