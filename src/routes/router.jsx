@@ -21,6 +21,7 @@ import NotFound from "../pages/NotFound";
 import Deployement from "../pages/Deployemnet";
 import MyHosted from "../pages/Myhosted";
 import PrivateRoutes from "../Providers/PrivateRoutes";
+import TodoList from "../Components/Todo/TodoList";
 
 const router = createBrowserRouter([
   {
@@ -78,6 +79,10 @@ const router = createBrowserRouter([
       {
         path: "/resume",
         element: <Resume />,
+      },
+      {
+        path: "/todo",
+        element: <TodoList />,
       },
       {
         path: "/cool",
