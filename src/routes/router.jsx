@@ -102,11 +102,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/test",
-        element: (
-          <PrivateRoutes>
-            <TestingShow />
-          </PrivateRoutes>
-        ),
+        element: <TestingShow />,
       },
       {
         path: "/google",
@@ -114,11 +110,7 @@ const router = createBrowserRouter([
       },
       {
         path: "control",
-        element: (
-          <PrivateRoutes>
-            <ControlRoom />
-          </PrivateRoutes>
-        ),
+        element: <ControlRoom />,
       },
       {
         path: "update/:id",
